@@ -7,6 +7,7 @@
 
 var createReactIOSNativeComponentClass = require('createReactIOSNativeComponentClass');
 var ReactIOSViewAttributes = require('ReactIOSViewAttributes');
+var Viewport = require('react-native-viewport');
 var merge = require('merge');
 
 var React = require('react-native');
@@ -21,10 +22,20 @@ type Props = {
 }
 
 var Overlay = React.createClass({
+  getInitialState() {
+    return {
+      width: 0,
+      height: 0
+    }
+  },
   getDefaultProps(): Props {
     return {
       isVisible: false,
+      aboveStatusBar: true
     }
+  },
+  componentWillMount() {
+    Viewport.getDimensions((dim) => this.setState({dim:dim}));
   },
 
   render() {
@@ -34,7 +45,7 @@ var Overlay = React.createClass({
 
     if (this.props.isVisible) {
       return (
-        <RNOverlay visible={true} style={styles.container} pointerEvents="none" aboveStatusBar={this.props.aboveStatusBar}>
+        <RNOverlay visible={true} style={[styles.container, this.state.dim]} pointerEvents="none" aboveStatusBar={this.props.aboveStatusBar}>
           {React.Children.map(this.props.children, React.addons.cloneWithProps)}
         </RNOverlay>
       );
@@ -52,7 +63,6 @@ var RNOverlay = createReactIOSNativeComponentClass({
 var styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: 0,
     bottom: 0,
     left: 0,
     right: 0,

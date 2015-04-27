@@ -3,7 +3,11 @@
   "version": "0.1.7",
   "description": "An <Overlay /> component that brings content inside to the front of the view regardless of its current position in the component tree.",
   "main": "Overlay.ios.js",
-  "author": "Brent Vatne <brentvatne@gmail.com> (https://github.com/brentvatne)",
+  "author": {
+    "name": "Brent Vatne",
+    "email": "brentvatne@gmail.com",
+    "url": "https://github.com/brentvatne"
+  },
   "files": [
     "RNOverlay.xcodeproj",
     "Overlay.ios.js",
@@ -16,10 +20,37 @@
     "RNOverlayManager.m"
   ],
   "peerDependencies": {
-    "react-native": "^0.4.0"
+    "react-native": "^0.4.0",
+    "react-native-viewport": "lindalala/react-native-viewport"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:brentvatne/react-native-overlay.git"
-  }
+  },
+  "gitHead": "8aa84a5fcf548c3e043dd1cb254a7dc30a7d217d",
+  "bugs": {
+    "url": "https://github.com/brentvatne/react-native-overlay/issues"
+  },
+  "homepage": "https://github.com/brentvatne/react-native-overlay",
+  "_id": "react-native-overlay@0.1.7",
+  "scripts": {},
+  "_shasum": "a648a9a169e2b038231b5809c3279a92d989d26e",
+  "_from": "react-native-overlay@>=0.1.7 <0.2.0",
+  "_npmVersion": "1.4.20",
+  "_npmUser": {
+    "name": "brentvatne",
+    "email": "brentvatne@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "brentvatne",
+      "email": "brentvatne@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "a648a9a169e2b038231b5809c3279a92d989d26e",
+    "tarball": "http://registry.npmjs.org/react-native-overlay/-/react-native-overlay-0.1.7.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/react-native-overlay/-/react-native-overlay-0.1.7.tgz"
 }
